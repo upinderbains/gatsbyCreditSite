@@ -1,31 +1,30 @@
 import React from "react"
 import { graphql } from "gatsby"
-
+import Home from "../components/retail/Home"
 import { Layout } from "../components"
-import Features from "../components/Home/Features"
-import About from "../components/Home/About"
-import Story from "../components/Home/Story"
-import Services from "../components/Home/Services"
-import Rewards from "../components/Home/Rewards"
+import About from "../components/retail/About"
+import Features from "../components/retail/Features"
+import Rewards from "../components/retail/Rewards"
 
-export default ({ data }) => {
+const retail = ({ data }) => {
   return (
     <Layout>
+      <Home data={data.home.edges} />
       <About data={data.about.edges} />
-      <Story />
       <Features data={data.feature.edges} />
       <Rewards data={data.rewards.edges} />
-      <Services data={data.services.edges} />
     </Layout>
   )
 }
 
+export default retail
+
 export const query = graphql`
   {
-    about: allMarkdownRemark(
+    home: allMarkdownRemark(
       filter: {
-        fileAbsolutePath: { regex: "/home/" }
-        frontmatter: { section: { eq: "about" } }
+        fileAbsolutePath: { regex: "/retail/" }
+        frontmatter: { section: { eq: "home" } }
       }
     ) {
       edges {
@@ -46,9 +45,31 @@ export const query = graphql`
         }
       }
     }
+    about: allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: { regex: "/retail/" }
+        frontmatter: { section: { eq: "about" } }
+      }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            image {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+            }
+          }
+          excerpt
+        }
+      }
+    }
     feature: allMarkdownRemark(
       filter: {
-        fileAbsolutePath: { regex: "/home/" }
+        fileAbsolutePath: { regex: "/retail/" }
         frontmatter: { section: { eq: "features" } }
       }
     ) {
@@ -66,7 +87,7 @@ export const query = graphql`
     }
     rewards: allMarkdownRemark(
       filter: {
-        fileAbsolutePath: { regex: "/home/" }
+        fileAbsolutePath: { regex: "/retail/" }
         frontmatter: { section: { eq: "rewards" } }
       }
     ) {
@@ -78,23 +99,6 @@ export const query = graphql`
               item
               subtitle
               points
-            }
-          }
-        }
-      }
-    }
-    services: allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: { regex: "/home/" }
-        frontmatter: { section: { eq: "services" } }
-      }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            Itemlist {
-              subtitle
-              text
             }
           }
         }
