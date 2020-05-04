@@ -19,11 +19,10 @@ const Title = ({ title, subtitle, text }) => {
 
 const TitleWrapper = styled.div`
   font-size: var(--fs-h2);
-  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
-  padding: 0rem 2rem;
   max-width: 750px;
+  
 
   h2 {
     display: inline-block;

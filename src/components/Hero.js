@@ -9,10 +9,9 @@ const Hero = ({ img, className }) => {
 export default styled(Hero)`
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, rgba(255, 255, 255), 60%, transparent);
+  background: linear-gradient(to right, rgba(255, 255, 255),  60%, transparent);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-
   opacity: 1 !important;
 `

@@ -12,7 +12,7 @@ const Container = styled.section`
 `
 const About = ({ data }) => {
   const { frontmatter, excerpt } = data[0].node
-  const { title, image } = frontmatter
+  const { title } = frontmatter
   return (
     <Container>
       <Title title={title} text={excerpt}></Title>

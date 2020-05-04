@@ -5,7 +5,6 @@ import IconCheck from "../icons/check"
 const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-
   grid-gap: 5rem;
   align-items: start;
 `
