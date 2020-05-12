@@ -1,8 +1,6 @@
 import React from "react"
 import Title from "./Title"
 import styled from "styled-components"
-import Fade from "react-reveal/Fade"
-import withReveal from "react-reveal/withReveal"
 import tourImage from "../tour-images/tour-10.jpeg"
 
 const ServiceContainer = styled.section`
@@ -26,8 +24,7 @@ const ServiceItem = styled.div`
   }
 `
 
-const StyledImage = withReveal(
-  styled.img`
+const StyledImage =  styled.img`
     width: 100%;
     max-width: 400px;
     height: 400px;
@@ -36,11 +33,8 @@ const StyledImage = withReveal(
     @media (max-width: 900px) {
       margin: ${props => (props.down ? "0px" : "50px 0px")};
     }
-  `,
-  <Fade right />
-)
+  `
 
-const StyledTitle = withReveal(styled(Title)``, <Fade left />)
 
 const Service = ({ list }) => {
   return (
@@ -48,7 +42,7 @@ const Service = ({ list }) => {
       {list.map((item, index) => {
         return (
           <ServiceItem key={index} reverse={index === 0 ? true : false}>
-            <StyledTitle title={item.subtitle} text={item.text} />
+            <Title title={item.subtitle} text={item.text} />
             <StyledImage flip src={tourImage} alt="" />
           </ServiceItem>
         )

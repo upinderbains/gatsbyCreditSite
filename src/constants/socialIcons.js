@@ -18,9 +18,6 @@ export default [{
     icon: < IconTwitter / > ,
     url: "https://twitter.com"
   },
-  {
-    icon: < IconLocation / > ,
-    url: "https://instagram.com"
-  },
+ 
 
 ]

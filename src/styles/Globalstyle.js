@@ -54,8 +54,8 @@ body{
 }
 
 h4{
-  font-weight: 400;
-  font-size: var(--fs-lg);
+  font-weight: 600;
+  font-size: var(--fs-xl);
 
 }
 ul{

@@ -20,21 +20,23 @@ const GridContent = styled.div`
   grid-row: 1;
   display: flex;
   align-items: center;
-  
+  justify-content: center;
+  min-height: 50vh;
+  @media (max-width: 1000px) {
+    align-items: flex-start;
+  }
+
 `
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  height: 100%;
   min-width: 480px;
   max-width: 60vw;
   z-index: 10;
-  margin: 2rem;
- 
-  @media (max-width: 700px) {
-    padding: 2rem 6rem;
+  margin-left: 2rem;
+  padding: 4rem 1rem; 
 `
 const ImageContainer = styled.div`
   grid-column: 3 / -1;
@@ -44,7 +46,6 @@ const ImageContainer = styled.div`
 `
 
 const Landing = ({ dataFront, dataText }) => {
-  
   const { title, subtitle, buttonText, image } = dataFront
 
   return (
@@ -64,4 +65,3 @@ const Landing = ({ dataFront, dataText }) => {
 }
 
 export default Landing
-

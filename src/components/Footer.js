@@ -16,11 +16,13 @@ const StyledFooter = styled.footer`
 `
 const SocialLinks = styled.a`
   padding: 10px;
+  border-bottom: 1px solid var(--color-grey-light-1);
   svg {
     fill: var(--color-grey-light-1);
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     transition: all .5s;
+
     &:hover,
     &:focus {
       fill: var(--color-primary)
@@ -29,6 +31,8 @@ const SocialLinks = styled.a`
 `
 
 const NavLinks = styled.div`
+ 
+ 
   a {
     font-size: var(--fs-lg);
     text-decoration: none;
@@ -61,21 +65,19 @@ const Footer = () => {
           {navLinks.map((link, index) => {
             return (
               <AniLink
-                fade
+              fade
                 key={index}
                 to={link.path}
                 activeStyle={{
                   color: "var(--color-primary)",
                 }}
               >
-                {" "}
                 {link.text}
               </AniLink>
             )
           })}
         </NavLinks>
         <div>
-          {" "}
           {socialLinks.map((link, index) => {
             return (
               <SocialLinks
@@ -84,8 +86,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {" "}
-                {link.icon}{" "}
+                {link.icon}
               </SocialLinks>
             )
           })}{" "}

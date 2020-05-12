@@ -14,7 +14,7 @@ const FeatureItem = styled.div`
   grid-template-columns: min-content 1fr;
   grid-row-gap: 1.5rem;
   grid-column-gap: 2.5rem;
-  background-color: var(--color-grey-light-1);
+
   padding: 3rem 5rem;
   border-radius: 8px;
 
@@ -28,7 +28,7 @@ const FeatureItem = styled.div`
     font-size: var(--fs-md);
   }
   h4 {
-    color: var(color-grey-dark-1);
+    color: var(--color-secondary);
   }
 `
 const Feature = ({ list }) => {

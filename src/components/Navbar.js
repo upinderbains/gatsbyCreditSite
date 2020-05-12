@@ -134,8 +134,8 @@ const Navbar = () => {
             {navLinks.map((link, index) => {
               return (
                 <NavItem key={index}>
-                  <AniLink
-                    fade
+                  <AniLink 
+                  fade
                     to={link.path}
                     activeStyle={{ color: "var(--color-primary)" }}
                   >

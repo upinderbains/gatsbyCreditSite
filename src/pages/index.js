@@ -59,6 +59,13 @@ export const query = graphql`
               title
               text
             }
+            image {
+              childImageSharp {
+                fixed(width: 500, height: 600) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
         }
       }

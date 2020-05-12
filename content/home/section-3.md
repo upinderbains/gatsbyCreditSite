@@ -1,6 +1,6 @@
 ---
 title: "What can you do with Eyowo"
-image: "./default-2.jpeg"
+image: "./hero.jpg"
 section: "features"
 featureList:
   [

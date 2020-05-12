@@ -3,11 +3,7 @@ import styled from "styled-components"
 
 const Title = ({ title, subtitle, text }) => {
   return (
-    <TitleWrapper
-      data-sal="slide-right"
-      data-sal-delay="3000"
-      data-sal-easing="ease-out-back"
-    >
+    <TitleWrapper>
       <h2>
         {title}
         <TitleSpan>{subtitle}</TitleSpan>
