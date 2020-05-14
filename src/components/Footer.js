@@ -7,7 +7,7 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
 const StyledFooter = styled.footer`
   grid-column: full-start / full-end;
   background-color: var(--color-secondary);
-  min-height: 20vh;
+  min-height: 25vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,12 +16,12 @@ const StyledFooter = styled.footer`
 `
 const SocialLinks = styled.a`
   padding: 10px;
-  border-bottom: 1px solid var(--color-grey-light-1);
+ 
   svg {
-    fill: var(--color-grey-light-1);
+    fill: var(--color-grey-light-2);
     width: 25px;
     height: 25px;
-    transition: all .5s;
+    transition: all .3s;
 
     &:hover,
     &:focus {
@@ -40,7 +40,7 @@ const NavLinks = styled.div`
     text-transform: uppercase;
 
     color: var(--color-grey-light-1);
-    transition: all 0.5s;
+    transition: all 0.3s;
     &:hover {
       color: var(--color-primary);
     }
@@ -50,11 +50,13 @@ const NavLinks = styled.div`
 const StyledContainer = styled.div`
   display: flex;
   align-items: center;
+  padding: 0rem 5rem;
   width: 100%;
   justify-content: space-between;
 `
 const StyledCopyright = styled.div`
   font-size: var(--fs-md);
+  color: var(--color-grey-light-2);
 `
 
 const Footer = () => {
@@ -94,8 +96,7 @@ const Footer = () => {
       </StyledContainer>
 
       <StyledCopyright>
-        copyright & copy; new company {new Date().getFullYear()}
-        all rights reserved
+        <p>&copy; {new Date().getFullYear()} company. All rights reserved.</p>
       </StyledCopyright>
     </StyledFooter>
   )
